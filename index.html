@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Roshini S</title><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark page with an orange glow at the top right. Hero is text on the left and a large illustrated portrait with floating spheres on the right (stacked on phones). Below it, sections for About, Experience, Projects (outlined repeating heading) and Contact. Single committed look, so every color is set explicitly. */
+:root {
+  --bg: #0D0907;
+  --surface: #1A110C;
+  --cream: #FFF1E6;
+  --peach: #FFB27A;
+  --orange: #FF6A1F;
+  --spark: #FF8A4C;
+  --muted: #BFA595;
+  --line: #3A261B;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--cream);
+  background-color: var(--bg);
+  background-image: radial-gradient(70% 38% at 88% 0%, rgba(255, 106, 31, 0.32), rgba(255, 106, 31, 0) 70%);
+  background-repeat: no-repeat;
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+a { color: var(--spark); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--peach); outline-offset: 3px; }
+h1, h2, h3, p { margin: 0; }
+.inner {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.mono { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* nav */
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 12px 20px; flex-wrap: wrap; padding-block: 18px; }
+.brand { font-family: var(--font-serif); font-size: 1.4rem; }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px 18px; flex-wrap: wrap; align-items: center; }
+.nav a { color: var(--cream); text-decoration: none; opacity: 0.85; }
+.nav a:hover { opacity: 1; text-decoration: underline; }
+.nav a.pill { background: var(--orange); color: #1A0B04; opacity: 1; padding: 6px 14px; border-radius: 999px; font-weight: 500; text-decoration: none; }
+
+/* hero */
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; padding-block: 24px 0; align-items: center; }
+.copy { display: grid; gap: 18px; padding-bottom: 8px; min-width: 0; }
+.eyebrow { color: var(--spark); }
+h1 {
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(4rem, 20vw, 9rem); line-height: 0.9; letter-spacing: -0.045em;
+  color: var(--cream);
+  background: linear-gradient(180deg, #FFF1E6 30%, #FFB27A 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.tag { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.6rem, 6.4vw, 2.6rem); line-height: 1.08; letter-spacing: -0.02em; max-width: 15em; text-wrap: balance; }
+.tag em { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 1.12em; color: var(--peach); letter-spacing: 0; }
+.lede { max-width: 46ch; color: #E8D3C4; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; color: var(--muted); }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--orange); margin-right: 8px; animation: pulse 2.4s ease-in-out infinite; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 6px; }
+.btn { display: inline-block; padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: 600; font-family: var(--font-display); }
+.btn.solid { background: var(--orange); color: #1A0B04; }
+.btn.ghost { border: 1px solid var(--peach); color: var(--cream); }
+.portrait { width: 100%; max-width: 540px; margin: 0 auto; }
+.hint { text-align: center; color: var(--muted); padding-top: 6px; }
+.cursor { position: fixed; left: 0; top: 0; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; pointer-events: none; z-index: 20; opacity: 0; transition: opacity 0.3s ease; background: radial-gradient(circle at 35% 30%, #E4F1FF 0%, #7FB4FF 45%, #2A5FB8 100%); box-shadow: 0 0 22px 4px rgba(127, 180, 255, 0.55); }
+.cursor.on { opacity: 1; }
+.portrait svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* portrait motion */
+.hair-sway { transform-box: view-box; transform-origin: 260px 200px; animation: hair 6s ease-in-out infinite; }
+.head-tilt { transform-box: view-box; transform-origin: 260px 330px; animation: tilt 5.5s ease-in-out infinite; }
+.breath { animation: breath 4.2s ease-in-out infinite; }
+.blink { transform-box: fill-box; transform-origin: center; animation: blink 5.2s infinite; }
+.f1 { animation: float 5s ease-in-out infinite; }
+.f2 { animation: float 6.5s ease-in-out -2s infinite; }
+.f3 { animation: float 4.2s ease-in-out -1s infinite; }
+.aura { animation: pulse 4s ease-in-out infinite; }
+@keyframes hair { 0%, 100% { transform: rotate(-0.8deg); } 50% { transform: rotate(1deg); } }
+@keyframes tilt { 0%, 100% { transform: rotate(-4.5deg); } 50% { transform: rotate(-1.5deg); } }
+@keyframes breath { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.08); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hair-sway, .breath, .blink, .f1, .f2, .f3, .aura, .dot, .breathe { animation: none; }
+  .head-tilt { animation: none; transform: rotate(-3deg); }
+  .cursor { display: none; }
+}
+
+
+/* image portrait */
+header { overflow-x: clip; }
+.stage { position: relative; width: 100%; aspect-ratio: 900 / 1029; max-width: 100%; }
+.aura { position: absolute; inset: -6% -22% 4%; background: radial-gradient(closest-side, rgba(255, 106, 31, 0.5), rgba(255, 106, 31, 0.14) 62%, rgba(255, 106, 31, 0) 100%); animation: pulse 4s ease-in-out infinite; will-change: transform; }
+.breathe { position: absolute; inset: 0; animation: breath 4.4s ease-in-out infinite; }
+.tilt { position: absolute; inset: 0; transform-origin: 50% 92%; will-change: transform; -webkit-mask-image: linear-gradient(#000 86%, transparent 100%); mask-image: linear-gradient(#000 86%, transparent 100%); }
+.tilt img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+.headlayer { transform-origin: 48% 44%; will-change: transform; -webkit-mask-image: linear-gradient(#000 38%, transparent 50%); mask-image: linear-gradient(#000 38%, transparent 50%); }
+.orbwrap { position: absolute; aspect-ratio: 1; will-change: transform; }
+.orb { display: block; width: 100%; height: 100%; border-radius: 50%; }
+.o-orange { background: radial-gradient(circle at 35% 30%, #FFE0C2, #FF8A4C 35%, #B83D06 100%); box-shadow: 0 0 26px rgba(255, 106, 31, 0.45); }
+.o-dark { background: radial-gradient(circle at 35% 30%, #6B5448, #2A1B14 50%, #0A0605 100%); }
+.o-blue { background: radial-gradient(circle at 35% 30%, #E4F1FF, #7FB4FF 45%, #2A5FB8 100%); }
+.f1 { animation: float 5s ease-in-out infinite; }
+.f2 { animation: float 6.5s ease-in-out -2s infinite; }
+.f3 { animation: float 4.2s ease-in-out -1s infinite; }
+
+.pic { position: absolute; inset: 0; width: 100%; height: 100%; display: block; -webkit-mask-image: linear-gradient(#000 86%, transparent 100%); mask-image: linear-gradient(#000 86%, transparent 100%); user-select: none; -webkit-user-drag: none; }
+
+/* scroll travel: the stage is moved by script; it keeps its place in the hero layout */
+.stage { z-index: 40; pointer-events: none; transform-origin: 0 0; will-change: transform; }
+.fx { position: absolute; inset: 0; pointer-events: none; }
+.bubble { position: fixed; z-index: 41; right: 16px; bottom: 120px; max-width: min(60vw, 260px); padding: 8px 14px; border-radius: 16px 16px 4px 16px; background: var(--surface); border: 1px solid var(--peach); color: var(--cream); font-size: 0.9rem; line-height: 1.35; opacity: 0; transform: translateY(6px) scale(0.96); transform-origin: 100% 100%; transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: none; }
+.bubble.on { opacity: 1; transform: none; }
+#contact .inner { position: relative; }
+.slot { width: min(72%, 300px); aspect-ratio: 900 / 1029; margin: 0 0 -72px auto; pointer-events: none; }
+@media (min-width: 860px) {
+  .slot { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); bottom: -104px; width: min(38%, 400px); margin: 0; }
+  #contact .sec > *:not(.slot) { max-width: 58%; }
+}
+
+/* sections */
+section { padding-block: 72px; border-top: 1px solid var(--line); }
+.sec { display: grid; gap: 30px; }
+h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.8rem, 13vw, 5.5rem); line-height: 0.92; letter-spacing: -0.04em; }
+.sub { color: var(--muted); max-width: 54ch; }
+.about-text { font-size: 1.1rem; max-width: 60ch; color: #E8D3C4; }
+
+.stack { display: grid; gap: 0; }
+.stack .ghost { -webkit-text-stroke: 1.5px var(--peach); color: transparent; -webkit-text-fill-color: transparent; user-select: none; }
+.stack .g1 { opacity: 0.55; }
+.stack .g2 { opacity: 0.25; }
+
+.ledger { list-style: none; margin: 0; padding: 0; }
+.ledger li { display: grid; grid-template-columns: minmax(124px, 156px) minmax(0, 1fr); gap: 16px; align-items: baseline; padding-block: 16px; border-bottom: 1px solid var(--line); }
+.ledger li:first-child { border-top: 1px solid var(--line); }
+.num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.4rem, 11vw, 3.6rem); line-height: 1; letter-spacing: -0.04em; color: var(--spark); font-variant-numeric: tabular-nums; }
+.ledger strong { display: block; font-weight: 600; }
+.src { color: var(--muted); font-size: 0.92rem; }
+
+.groups { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr); }
+.group { display: grid; gap: 10px; align-content: start; }
+.group .mono { color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--line); background: var(--surface); padding: 5px 12px; border-radius: 999px; font-size: 0.92rem; }
+
+.cases { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; transition: transform 0.2s ease, border-color 0.2s ease; }
+.case:hover { transform: translateY(-3px); border-color: var(--spark); }
+.case h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; letter-spacing: -0.02em; line-height: 1.15; }
+.case .mono { color: var(--spark); }
+.case p { color: #E8D3C4; }
+
+.jobs { display: grid; }
+.job { display: grid; gap: 10px; padding-block: 24px; border-bottom: 1px solid var(--line); min-width: 0; }
+.job:first-child { border-top: 1px solid var(--line); }
+.job h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.015em; line-height: 1.2; }
+.where { color: var(--muted); }
+.when { color: var(--spark); margin-top: 6px; }
+.job ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 68ch; color: #E8D3C4; }
+.job li::marker { color: var(--spark); }
+
+.contact h2 { font-size: clamp(3rem, 14vw, 7rem); }
+.row { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.val { font-family: var(--font-mono); font-size: 0.98rem; user-select: all; overflow-wrap: anywhere; }
+button.copy { font: inherit; font-size: 0.85rem; background: transparent; color: var(--cream); border: 1px solid var(--peach); border-radius: 999px; padding: 4px 14px; cursor: pointer; }
+button.copy:hover { background: var(--cream); color: var(--bg); }
+footer { border-top: 1px solid var(--line); padding-block: 22px 40px; color: var(--muted); }
+
+@media (min-width: 860px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; padding-top: 40px; }
+  .cases { grid-template-columns: 1fr 1fr; }
+  .groups { grid-template-columns: 1fr 1fr; }
+  .job { grid-template-columns: 250px minmax(0, 1fr); gap: 32px; }
+  section { padding-block: 104px; }
+}
+</style>
+
+<header>
+  <div class="inner">
+    <nav class="nav" aria-label="Sections">
+      <span class="brand">Roshini S</span>
+      <ul class="mono">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a class="pill" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-grid">
+      <div class="copy">
+        <p class="mono eyebrow">// Associate Product Manager | AI &amp; Quality</p>
+        <h1>Roshini</h1>
+        <p class="tag">Building <em>reliable</em> AI products and the quality behind them.</p>
+        <p class="lede">Product-minded operator with 9+ years owning feature quality end to end across SaaS, gaming, med-tech and edu-tech. I built and evaluated an Agent AI response-quality framework at scale, and I am now building a two-sided marketplace from wireframes up.</p>
+        <div class="meta mono">
+          <span>Bengaluru, India</span>
+          <span><span class="dot"></span>Available for work</span>
+          <span>9+ years</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn solid" href="#contact">Let's talk</a>
+          <a class="btn ghost" href="#projects">See projects</a>
+        </div>
+      </div>
+
+      <div class="portrait">
+        <div class="stage" id="stage">
+          <div class="fx" id="fx">
+          <div class="aura" id="aura"></div>
+          <div class="orbwrap" data-par="-22,-12" style="left:84%;top:10%;width:9%"><span class="orb o-orange f1"></span></div>
+          <div class="orbwrap" data-par="26,14" style="left:-2%;top:46%;width:11%"><span class="orb o-dark f2"></span></div>
+          <div class="orbwrap" data-par="-12,12" style="left:8%;top:8%;width:4.4%"><span class="orb o-blue f3"></span></div>
+          <div class="orbwrap" data-par="16,-9" style="left:93%;top:52%;width:5.4%"><span class="orb o-dark f2"></span></div>
+          </div>
+          <svg class="pic" viewBox="0 0 1173 1341" role="img" aria-label="Illustrated portrait of Roshini in a navy blazer, smiling with her arms crossed. Her eyes follow your cursor.">
+            <defs>
+              <clipPath id="clipL"><polygon points="498.0,350.8 501.2,343.0 507.5,336.5 515.5,331.5 525.5,328.5 537.5,327.2 548.0,328.0 556.0,333.0 561.0,342.5 564.0,351.0 556.5,353.5 543.8,356.5 528.8,358.2 515.0,357.0 504.5,354.5"/></clipPath>
+              <clipPath id="clipR"><polygon points="638.0,340.2 642.0,334.0 649.5,326.5 657.5,320.0 665.5,315.5 675.5,312.8 686.2,312.8 694.5,315.5 701.5,320.5 708.5,326.0 710.5,328.0 703.0,334.0 693.0,339.0 681.2,341.0 670.0,341.8 657.5,341.2 646.2,340.8"/></clipPath>
+            </defs>
+            <image href="portrait-clean.webp" x="0" y="0" width="1173" height="1341"/>
+            <g clip-path="url(#clipL)"><image id="irisL" href="iris-l.png" x="518" y="320" width="42" height="42" data-cx="539.0" data-cy="341.0"/></g>
+            <g clip-path="url(#clipR)"><image id="irisR" href="iris-r.png" x="657" y="303" width="42" height="42" data-cx="677.5" data-cy="323.5"/></g>
+          </svg>
+        </div>
+        <p class="mono hint" id="hint">Move your cursor, then scroll down.</p>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<main>
+  <section id="about">
+    <div class="inner sec">
+      <h2>About</h2>
+      <p class="about-text">I turn quality signals into product decisions. Over 9+ years I have defined acceptance criteria, run UAT and used root cause analysis to shape roadmaps in direct partnership with Product and Engineering. I pair hands-on AI response evaluation with KPI and OKR ownership, and I bring a customer-conversion lens from years of sales, training and auditing work.</p>
+
+      <ul class="ledger">
+        <li><span class="num">22%</span><div><strong>Fewer repeated contacts</strong><span class="src">RCA on defect and usage trends, Gameskraft</span></div></li>
+        <li><span class="num">13%</span><div><strong>Higher self-service adoption</strong><span class="src">Analytics-driven recommendations that reduced inbound volume, Gameskraft</span></div></li>
+        <li><span class="num">87%</span><div><strong>Cross-team adoption of a CX improvement program</strong><span class="src">Byju's</span></div></li>
+        <li><span class="num">~38%</span><div><strong>Accuracy lift from audit frameworks and scoring</strong><span class="src">Simpl</span></div></li>
+        <li><span class="num">25%</span><div><strong>Agent accuracy up, recurring errors down 20%</strong><span class="src">Quality governance and training design, Simpl</span></div></li>
+        <li><span class="num">19%</span><div><strong>Agent accuracy up, repeat errors down 26%</strong><span class="src">RCA-driven coaching, Byju's</span></div></li>
+      </ul>
+
+      <div class="groups">
+        <div class="group">
+          <span class="mono">Core strengths</span>
+          <div class="chips">
+            <span class="chip">Product requirements</span><span class="chip">Acceptance criteria</span><span class="chip">AI response evaluation</span><span class="chip">RCA to roadmap</span><span class="chip">Cross-functional delivery</span><span class="chip">KPI and OKR tracking</span><span class="chip">AI quality and governance</span><span class="chip">Program governance</span><span class="chip">Figma to Supabase to ship</span><span class="chip">Stakeholder communication</span><span class="chip">Six Sigma</span>
+          </div>
+        </div>
+        <div class="group">
+          <span class="mono">Tools</span>
+          <div class="chips">
+            <span class="chip">JIRA</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">GSuite</span><span class="chip">Figma</span><span class="chip">Supabase</span><span class="chip">Capacitor</span><span class="chip">Freshdesk</span><span class="chip">Ameyo</span><span class="chip">Haptik</span><span class="chip">Exotel</span><span class="chip">TransMon</span><span class="chip">RPA workflows</span><span class="chip">API-trigger automations</span>
+          </div>
+        </div>
+        <div class="group">
+          <span class="mono">Certifications</span>
+          <div class="chips">
+            <span class="chip">Product Management, Udemy</span><span class="chip">Power BI Masterclass</span><span class="chip">Figma UI/UX, Udemy</span><span class="chip">Data Science Bootcamp, Udemy</span>
+          </div>
+        </div>
+        <div class="group">
+          <span class="mono">Education and languages</span>
+          <div class="chips">
+            <span class="chip">BCA, Amity University</span><span class="chip">English</span><span class="chip">Hindi</span><span class="chip">Kannada</span><span class="chip">Telugu</span><span class="chip">Tamil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="inner sec">
+      <h2>Experience</h2>
+      <div class="jobs">
+        <div class="job">
+          <div><h3>Senior Salesperson</h3><p class="where">Global Auto Experts, US auto parts retailer</p><p class="mono when">Apr 2026 – Jun 2026</p></div>
+          <ul>
+            <li>Managed the full sales cycle for US customers: inquiries, quoting and order follow-through.</li>
+            <li>Met weekly conversion targets through quick rapport and pitches tailored to customer needs and budget.</li>
+            <li>Fed recurring customer escalations back into process improvements using RCA discipline.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div><h3>Senior Quality &amp; Program Analyst, Strategy &amp; Ops</h3><p class="where">Gameskraft, Bengaluru</p><p class="mono when">Apr 2022 – Sep 2025</p></div>
+          <ul>
+            <li>Partnered with Product, Engineering and UX to validate feature launches through UAT and refine CRM workflows.</li>
+            <li>Built the Agent AI quality and evaluation framework, from rubric to drift monitoring.</li>
+            <li>Ran RCA that informed fixes cutting repeated contacts by 22%, and lifted self-service adoption by 13%.</li>
+            <li>Aligned quality benchmarks with conversion and renewal goals alongside growth stakeholders.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div><h3>Senior Process Trainer</h3><p class="where">Byju's, Bengaluru</p><p class="mono when">Aug 2020 – Mar 2022</p></div>
+          <ul>
+            <li>Designed onboarding and product-training curricula that turned new feature logic into field-ready documentation.</li>
+            <li>Trained sales and counseling teams on pitch structure, objection handling and conversion technique.</li>
+            <li>Shortened time-to-first-conversion for new hires, and built evaluation rubrics later reused as calibration standards.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div><h3>Quality Analyst and Trainer</h3><p class="where">Byju's, Bengaluru</p><p class="mono when">Feb 2019 – Aug 2020</p></div>
+          <ul>
+            <li>Ran end-to-end QA audits and review cycles that cut repeat errors and improved compliance.</li>
+            <li>Found recurring objection-handling gaps in sales calls and built coaching modules to close them.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div><h3>Senior Associate, Customer Strategy &amp; Operations</h3><p class="where">Simpl, Bengaluru</p><p class="mono when">Apr 2018 – Feb 2019</p></div>
+          <ul>
+            <li>Owned quality governance and training design, including upsell and cross-sell coaching.</li>
+            <li>Implemented QA dashboards and audit cycles that leadership used for decisions.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div><h3>Associate, Customer Strategy &amp; Operations</h3><p class="where">Simpl, Bengaluru</p><p class="mono when">Jul 2016 – Apr 2018</p></div>
+          <ul>
+            <li>Handled sales and service for customer accounts while designing audit frameworks and scoring.</li>
+            <li>Built quality dashboards tracking error types, KPIs and improvement trends for CX leadership.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="inner sec">
+      <div class="stack">
+        <h2>Projects.</h2>
+        <h2 class="ghost g1" aria-hidden="true">Projects.</h2>
+        <h2 class="ghost g2" aria-hidden="true">Projects.</h2>
+      </div>
+      <p class="sub">Four pieces that show how I move from a signal to a shipped decision.</p>
+      <div class="cases">
+        <article class="case">
+          <span class="mono">Gameskraft · Jul 2024 – Sep 2025</span>
+          <h3>Agent AI quality framework</h3>
+          <p>Acted as the de facto product owner for the initiative. I defined acceptance criteria, ran evaluation cycles and drove roadmap decisions with Engineering and Product leadership. The framework covers rubric design, scoring calibration and drift monitoring, built from the ground up.</p>
+        </article>
+        <article class="case">
+          <span class="mono">Gameskraft</span>
+          <h3>Data-leakage incident</h3>
+          <p>Led the root cause analysis on a data-leakage incident and drove the CRM safeguard changes that followed. A risk signal became a shipped fix.</p>
+        </article>
+        <article class="case">
+          <span class="mono">Gameskraft</span>
+          <h3>Measurement layer</h3>
+          <p>Built KPI scorecards and calibration frameworks that became the standard measurement layer across business units. Turned weekly CX and product performance data into insight decks that guided leadership prioritization.</p>
+        </article>
+        <article class="case">
+          <span class="mono">Independent · Stealth project</span>
+          <h3>Two-sided marketplace</h3>
+          <p>Founder and product builder, owning scope from wireframes through active development on a cloud-native stack. I led a full visual and UX redesign covering the design system, navigation and iconography, applying my Figma UI/UX training to a live product.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="inner sec">
+      <p class="mono" style="color: var(--spark)">Contact</p>
+      <h2>Let's build something.</h2>
+      <div class="row"><span class="val" id="mail">roshnishivanna@gmail.com</span><button class="copy" type="button" data-copy="mail">Copy</button></div>
+      <div class="row"><span class="val" id="tel">+91 9591241285</span><button class="copy" type="button" data-copy="tel">Copy</button></div>
+      <p class="mono" style="color: var(--muted)">Bengaluru, India</p>
+      <div class="slot" id="slot" aria-hidden="true"></div>
+    </div>
+  </section>
+</main>
+<div class="bubble" id="bubble" aria-hidden="true"></div>
+
+<footer>
+  <div class="inner"><span class="mono">Roshini S · Associate Product Manager | AI &amp; Quality</span></div>
+</footer>
+
+<script>
+(function () {
+  var btns = document.querySelectorAll('button.copy');
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById(b.getAttribute('data-copy'));
+      function sel() {
+        var rg = document.createRange(); rg.selectNodeContents(el);
+        var sl = window.getSelection(); sl.removeAllRanges(); sl.addRange(rg);
+        b.textContent = 'Selected';
+      }
+      try {
+        navigator.clipboard.writeText(el.textContent).then(function () { b.textContent = 'Copied'; }, sel);
+      } catch (err) { sel(); }
+      setTimeout(function () { b.textContent = 'Copy'; }, 1800);
+    });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  // 1) Eyes follow the pointer (or look toward the page when there is no pointer).
+  // 2) The portrait travels with you: hero -> small companion in the corner (with a caption per section) -> lands beside the contact details.
+  var hint = document.getElementById('hint');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var touchy = window.matchMedia('(hover: none)').matches;
+  if (hint && touchy) hint.textContent = 'Touch and drag, then scroll down.';
+  if (reduce) { if (hint) hint.hidden = true; return; }
+
+  var pic = document.querySelector('svg.pic');
+  var stage = document.getElementById('stage');
+  var wrap = stage.parentNode;
+  var fx = document.getElementById('fx');
+  var slot = document.getElementById('slot');
+  var bubble = document.getElementById('bubble');
+  var header = document.querySelector('header');
+  var cursor = document.getElementById('cursor');
+  var sections = ['about', 'experience', 'projects', 'contact'].map(function (id) { return document.getElementById(id); });
+  var SAY = ['Numbers first.', 'Nine years, short version.', 'Things I shipped.'];
+  var eyes = [document.getElementById('irisL'), document.getElementById('irisR')].map(function (el) {
+    return { el: el, cx: parseFloat(el.getAttribute('data-cx')), cy: parseFloat(el.getAttribute('data-cy')), x: 0, y: 0 };
+  });
+  var MAXX = 6.2, MAXUP = 2.6, MAXDOWN = 3.2;   // iris travel in portrait pixels (1173 x 1341)
+  var AR = 1029 / 900;
+
+  var px = 0, py = 0, haveInput = false, hideTimer = null, cx = 0, cy = 0;
+  var pS = 0, qS = 0, cur = -2, bTimer = null;
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function f(n) { return n.toFixed(2); }
+
+  function point(x, y) {
+    if (!haveInput) { cx = x; cy = y; }
+    px = x; py = y; haveInput = true;
+    cursor.classList.add('on');
+    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+  }
+  window.addEventListener('pointermove', function (e) { point(e.clientX, e.clientY); }, { passive: true });
+  function touch(e) { if (e.touches && e.touches[0]) point(e.touches[0].clientX, e.touches[0].clientY); }
+  window.addEventListener('touchstart', touch, { passive: true });
+  window.addEventListener('touchmove', touch, { passive: true });
+  window.addEventListener('touchend', function () {
+    hideTimer = setTimeout(function () { cursor.classList.remove('on'); }, 900);
+  }, { passive: true });
+  document.documentElement.addEventListener('mouseleave', function () { cursor.classList.remove('on'); });
+
+  function say(text) {
+    bubble.textContent = text;
+    bubble.classList.add('on');
+    if (bTimer) clearTimeout(bTimer);
+    bTimer = setTimeout(function () { bubble.classList.remove('on'); }, 3000);
+  }
+
+  function frame() {
+    var vw = window.innerWidth, vh = window.innerHeight;
+    cx += (px - cx) * 0.22; cy += (py - cy) * 0.22;
+    cursor.style.transform = 'translate3d(' + f(cx) + 'px,' + f(cy) + 'px,0)';
+
+    // ---- travel: hero (natural spot) -> corner companion -> contact slot
+    var W = wrap.getBoundingClientRect();
+    var S = slot.getBoundingClientRect();
+    var pT = clamp(window.scrollY / (header.offsetHeight * 0.75), 0, 1);
+    // progress toward the contact slot, scaled to how far the slot can actually rise on screen (it sits at the very bottom of the page)
+    var sTopAtEnd = S.top + (document.documentElement.scrollHeight - vh - window.scrollY);
+    var qSpan = Math.max(60, Math.min(vh * 0.75, (vh - sTopAtEnd) * 0.85));
+    var qT = S.width > 0 ? clamp((vh - S.top) / qSpan, 0, 1) : 0;
+    pS += (pT - pS) * 0.12; qS += (qT - qS) * 0.12;
+    if (Math.abs(pT - pS) < 0.0008) pS = pT;
+    if (Math.abs(qT - qS) < 0.0008) qS = qT;
+    var eA = ease(pS), eB = ease(qS);
+
+    var cw = clamp(vw * 0.26, 96, 150), ch = cw * AR;
+    var cX = vw - cw - Math.max(8, vw * 0.012), cY = vh - ch + 8;      // peeks up from the bottom edge
+    var x = lerp(lerp(W.left, cX, eA), S.left, eB);
+    var y = lerp(lerp(W.top, cY, eA), S.top, eB);
+    var w = lerp(lerp(W.width, cw, eA), S.width, eB);
+    var rot = -9 * Math.sin(Math.PI * eA) + 9 * Math.sin(Math.PI * eB);  // a little swoosh while she travels
+    var lw = W.width, lh = W.width * AR;
+    stage.style.transform = 'translate3d(' + f(x - W.left) + 'px,' + f(y - W.top) + 'px,0) scale(' + f(w / W.width) + ') translate(' + f(lw / 2) + 'px,' + f(lh / 2) + 'px) rotate(' + f(rot) + 'deg) translate(' + f(-lw / 2) + 'px,' + f(-lh / 2) + 'px)';
+    fx.style.opacity = f(clamp((1 - eA) + eB, 0, 1));
+    if (hint) hint.style.opacity = f(clamp(1 - pS * 4, 0, 1));
+
+    // ---- captions while she is the corner companion
+    var idx = -1;
+    for (var i = sections.length - 1; i >= 0; i--) {
+      if (sections[i].getBoundingClientRect().top < vh * 0.5) { idx = i; break; }
+    }
+    if (idx !== cur) {
+      cur = idx;
+      if (idx >= 0 && idx < SAY.length && eA > 0.8 && eB < 0.3) say(SAY[idx]);
+    }
+    if (bubble.classList.contains('on')) {
+      bubble.style.right = Math.round(vw - cX + 6) + 'px';
+      bubble.style.bottom = Math.round(vh - (cY + ch * 0.4)) + 'px';
+      if (eA < 0.6 || eB > 0.3) bubble.classList.remove('on');
+    }
+
+    // ---- eyes
+    var tpx = haveInput ? px : vw * 0.4, tpy = haveInput ? py : vh * 0.5;
+    var r = pic.getBoundingClientRect();
+    if (r.bottom > 0 && r.top < vh) {
+      var k = r.width / 1173;
+      for (var n = 0; n < eyes.length; n++) {
+        var e = eyes[n];
+        var ex = r.left + e.cx * k, ey = r.top + e.cy * k;
+        var vx = tpx - ex, vy = tpy - ey;
+        var d = Math.sqrt(vx * vx + vy * vy) || 1;
+        var m = 1 - Math.exp(-d / 140);
+        var tx = (vx / d) * m * MAXX;
+        var uy = (vy / d) * m;
+        var ty = uy < 0 ? uy * MAXUP : uy * MAXDOWN;
+        e.x += (tx - e.x) * 0.2; e.y += (ty - e.y) * 0.2;
+        e.el.setAttribute('transform', 'translate(' + f(e.x) + ' ' + f(e.y) + ')');
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</body></html>

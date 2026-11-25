@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Roshini S AI Quality</title><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one compact page on a faint grid. Hero first, then six short blocks (glance, results, experience, skills, projects, contact). Every block shows only its headline facts; details open on hover (mouse) or tap, through one shared expand pattern. Single committed dark look with an emerald accent, so every color is set explicitly. */
+:root {
+  --bg: #050D0A;
+  --panel: #0B1612;
+  --panel-2: #0F1D18;
+  --line: #1D2E27;
+  --text: #F1F6F3;
+  --soft: #B3C2BB;
+  --muted: #8FA19A;
+  --green: #2DD4A0;
+  --green-dim: rgba(45, 212, 160, 0.14);
+  --on-green: #04130E;
+  --font-display: "Syne", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(60% 40% at 8% 0%, rgba(45, 212, 160, 0.12), rgba(45, 212, 160, 0) 70%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: auto, 56px 56px, 56px 56px;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+a { color: var(--green); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+.inner { max-width: 1200px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mono { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+.green { color: var(--green); }
+.muted { color: var(--muted); }
+
+/* header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-block: 18px; flex-wrap: wrap; position: relative; }
+.logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--text); }
+.logo i { width: 32px; height: 32px; border-radius: 8px; background: #0B1612; border: 1px solid var(--line); display: grid; place-items: center; }
+.pill { display: none; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px; color: var(--green); background: rgba(5, 13, 10, 0.6); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2.4s ease-in-out infinite; }
+nav ul { display: none; gap: 6px 26px; align-items: center; }
+nav a.l { color: var(--soft); text-decoration: none; font-size: 0.95rem; }
+nav a.l:hover { color: var(--text); }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; border-radius: 999px; font: inherit; font-weight: 600; font-size: 0.98rem; cursor: pointer; text-decoration: none; border: 1px solid transparent; }
+.btn.solid { background: var(--green); color: var(--on-green); }
+.btn.solid:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--text); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--green); }
+.btn.sm { padding: 9px 18px; font-size: 0.9rem; }
+.burger { width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--line); background: transparent; color: var(--text); display: grid; place-items: center; cursor: pointer; }
+.iconbtn { display: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); place-items: center; color: var(--text); text-decoration: none; }
+.iconbtn:hover { border-color: var(--green); color: var(--green); }
+.menu { display: none; width: 100%; flex-direction: column; gap: 4px; padding: 10px 0 4px; }
+.top.open .menu { display: flex; }
+.menu a { color: var(--text); text-decoration: none; padding: 10px 4px; border-bottom: 1px solid var(--line); }
+.deskonly { display: none; }
+
+/* hero */
+.hero { padding-block: 28px 12px; display: grid; gap: 22px; }
+.eyebrow { display: flex; align-items: center; gap: 14px; color: var(--green); }
+.eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--green); flex: none; }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.1rem, 8.8vw, 5.2rem); line-height: 1.02; letter-spacing: -0.02em; max-width: 13em; text-wrap: balance; }
+h1 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--green); font-size: 1.12em; letter-spacing: -0.01em; }
+.lede { max-width: 54ch; color: var(--soft); font-size: 1.08rem; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 6px; }
+
+/* blocks */
+.block { padding-block: 44px 8px; display: grid; gap: 18px; scroll-margin-top: 16px; }
+.bhead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.bhead .mono { color: var(--muted); }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 5vw, 2.3rem); letter-spacing: -0.02em; line-height: 1.1; }
+.hint { color: var(--muted); }
+
+.grid3 { display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); }
+.grid4 { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.cards { display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; min-width: 0; transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease; }
+.glance { padding: 20px; display: grid; gap: 10px; align-content: start; }
+.glance svg { width: 22px; height: 22px; stroke: var(--green); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.glance h3, .proj h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.01em; line-height: 1.2; }
+.glance p, .teaser { color: var(--soft); font-size: 0.95rem; }
+
+/* shared expand pattern */
+.item .exp { all: unset; box-sizing: border-box; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; width: 100%; cursor: pointer; padding: 20px; }
+.item .exp:focus-visible { outline: 2px solid var(--green); outline-offset: -2px; border-radius: 14px; }
+.plus { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); position: relative; flex: none; margin-top: 2px; }
+.plus::before, .plus::after { content: ""; position: absolute; left: 50%; top: 50%; background: var(--green); transform: translate(-50%, -50%); transition: transform 0.25s ease, opacity 0.25s ease; }
+.plus::before { width: 10px; height: 1.5px; }
+.plus::after { width: 1.5px; height: 10px; }
+.more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.more-in { overflow: hidden; min-height: 0; }
+.more-pad { padding: 0 20px 20px; display: grid; gap: 10px; color: var(--soft); font-size: 0.95rem; }
+.more-pad ul { display: grid; gap: 8px; padding-left: 1.1em; list-style: disc; }
+.more-pad li::marker { color: var(--green); }
+.item.open { border-color: var(--green); background: var(--panel-2); }
+.item.open .more { grid-template-rows: 1fr; }
+.item.open .plus::after { transform: translate(-50%, -50%) scaleY(0); opacity: 0; }
+@media (hover: hover) and (pointer: fine) {
+  .item:not(.click-only):hover { border-color: var(--green); background: var(--panel-2); }
+  .item:not(.click-only):hover .more { grid-template-rows: 1fr; }
+  .item:not(.click-only):hover .plus::after { transform: translate(-50%, -50%) scaleY(0); opacity: 0; }
+  .glance:hover { border-color: var(--green); transform: translateY(-2px); }
+}
+
+/* results */
+.metric .exp { flex-direction: column; gap: 6px; padding: 18px; }
+.num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 9vw, 3rem); line-height: 1; color: var(--green); letter-spacing: -0.03em; }
+.mlabel { color: var(--soft); font-size: 0.92rem; line-height: 1.35; }
+.metric .more-pad { padding: 0 18px 18px; }
+.metric .plus { position: absolute; top: 14px; right: 14px; }
+.metric { position: relative; }
+
+/* experience */
+.rows { display: grid; gap: 10px; }
+.row .exp { gap: 18px; align-items: center; }
+.row .who { display: grid; gap: 2px; min-width: 0; }
+.row .co { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; }
+.row .role { color: var(--soft); font-size: 0.95rem; }
+.row .when { color: var(--green); white-space: nowrap; display: none; }
+.row .when.m { display: block; margin-top: 4px; }
+
+/* skills */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 6px 14px; font-size: 0.92rem; color: var(--text); }
+.skillbox .exp { align-items: center; }
+.groups { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); }
+.groups .mono { color: var(--muted); display: block; margin-bottom: 8px; }
+
+/* projects */
+.proj .tag { color: var(--green); display: block; margin-bottom: 8px; }
+.proj .exp > div { min-width: 0; }
+
+/* contact */
+.contact { padding-block: 56px 24px; }
+.cbox { border: 1px solid var(--line); background: var(--panel); border-radius: 18px; padding: 28px 22px; display: grid; gap: 14px; }
+.cbox h2 { font-size: clamp(2rem, 8vw, 3.4rem); }
+.mail { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.val { font-family: var(--font-mono); font-size: 1rem; user-select: all; overflow-wrap: anywhere; }
+footer { padding-block: 24px 44px; color: var(--muted); }
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .dot { animation: none; }
+  .more, .card, .plus::before, .plus::after { transition: none; }
+}
+@media (min-width: 760px) {
+  .grid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .row .when { display: block; }
+  .row .when.m { display: none; }
+  .block { padding-block: 64px 8px; }
+  .cbox { padding: 40px; }
+}
+@media (min-width: 1000px) {
+  .pill { display: inline-flex; }
+  nav ul { display: flex; }
+  .burger { display: none; }
+  .deskonly { display: inline-flex; }
+  .iconbtn { display: grid; }
+  .top .menu { display: none !important; }
+}
+</style>
+
+<div class="inner">
+  <header class="top" id="top">
+    <a class="logo" href="#top"><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2DD4A0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i>Roshini S</a>
+    <span class="pill mono"><span class="dot"></span>Open to APM · AI quality · program roles</span>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a class="l" href="#about">About</a></li>
+        <li><a class="l" href="#experience">Experience</a></li>
+        <li><a class="l" href="#skills">Skills</a></li>
+        <li><a class="l" href="#project">Project</a></li>
+        <li><a class="l" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="iconbtn" href="https://www.linkedin.com/in/roshini-shivanna-aa1814236/" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9.75h4v11.5H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.78 2.66 4.78 6.12v5.83h-4v-5.17c0-1.23-.02-2.82-1.72-2.82-1.72 0-1.98 1.34-1.98 2.73v5.26h-4z"/></svg></a>
+    <a class="btn solid sm deskonly" href="#contact">Get in touch</a>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="menu" id="menu">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#project">Project</a><a href="#contact">Contact</a><a href="https://www.linkedin.com/in/roshini-shivanna-aa1814236/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <p class="mono eyebrow">Roshini S · AI quality · Program management · Product</p>
+    <h1>I turn AI ambiguity into quality you can <em>measure.</em></h1>
+    <p class="lede">9+ years across SaaS, gaming, med-tech and edu-tech. I built the Agent AI response-quality framework at Gameskraft, ran quality programs end to end, and I am now independently building a consumer product from Figma to Supabase to ship.</p>
+    <div class="cta">
+      <a class="btn solid" href="#experience">Explore experience <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      <a class="btn ghost" href="#contact">Contact me</a>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="bhead"><span class="mono muted">Good at · At a glance</span></div>
+    <div class="grid3">
+      <article class="card glance">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.500-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>AI and agent response quality</h3>
+        <p>Built the Agent AI evaluation framework: rubric design, scoring calibration, drift monitoring.</p>
+      </article>
+      <article class="card glance">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16a8 8 0 1116 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1"/></svg>
+        <h3>Quality and program governance</h3>
+        <p>Audits, RCA and KPI/OKR scorecards, run on JIRA, Tableau and Power BI.</p>
+      </article>
+      <article class="card glance">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c1-4 3-6 5-7M14 4c3 0 6 1 6 1s1 3 1 6c-2 3-5 5-8 5l-4-4c0-3 2-6 5-8z"/><circle cx="15" cy="9" r="1.3"/><path d="M8 16l-3 1 1-3"/></svg>
+        <h3>End-to-end product build</h3>
+        <p>Independently shipping a two-sided marketplace, from Figma to Supabase.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="results">
+    <div class="bhead"><h2>Results</h2><span class="mono hint">Hover or tap a tile for the source</span></div>
+    <div class="grid4">
+      <article class="card item metric">
+        <button class="exp" type="button" aria-expanded="false"><span class="num">22%</span><span class="mlabel">Fewer repeated contacts</span></button>
+        <span class="plus" aria-hidden="true"></span>
+        <div class="more"><div class="more-in"><div class="more-pad"><p>RCA on defect and usage trends surfaced systemic product gaps. Gameskraft.</p></div></div></div>
+      </article>
+      <article class="card item metric">
+        <button class="exp" type="button" aria-expanded="false"><span class="num">13%</span><span class="mlabel">Higher self-service adoption</span></button>
+        <span class="plus" aria-hidden="true"></span>
+        <div class="more"><div class="more-in"><div class="more-pad"><p>Analytics-driven recommendations reduced inbound volume. Gameskraft.</p></div></div></div>
+      </article>
+      <article class="card item metric">
+        <button class="exp" type="button" aria-expanded="false"><span class="num">87%</span><span class="mlabel">Cross-team adoption of a CX program</span></button>
+        <span class="plus" aria-hidden="true"></span>
+        <div class="more"><div class="more-in"><div class="more-pad"><p>A CX improvement program I drove as a quality analyst and trainer. Byju's.</p></div></div></div>
+      </article>
+      <article class="card item metric">
+        <button class="exp" type="button" aria-expanded="false"><span class="num">19%</span><span class="mlabel">Agent accuracy lift, repeat errors down 26%</span></button>
+        <span class="plus" aria-hidden="true"></span>
+        <div class="more"><div class="more-in"><div class="more-pad"><p>RCA-driven coaching for sales and counseling agents. Byju's.</p></div></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="bhead"><h2>Experience</h2><span class="mono hint">Hover or tap a role for details</span></div>
+    <div class="rows">
+      <article class="card item row">
+        <button class="exp" type="button" aria-expanded="false">
+          <span class="who"><span class="co">Global Auto Experts</span><span class="role">Senior Salesperson</span><span class="mono when m">Apr 2026 – Jun 2026</span></span>
+          <span class="mono when">Apr 2026 – Jun 2026</span><span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="more"><div class="more-in"><div class="more-pad"><ul>
+          <li>Managed the full sales cycle for US customers: inquiries, quoting and order follow-through.</li>
+          <li>Met weekly conversion targets with quick rapport and pitches tailored to customer needs and budget.</li>
+          <li>Fed recurring customer escalations back into process improvements using RCA discipline.</li>
+        </ul></div></div></div>
+      </article>
+      <article class="card item row">
+        <button class="exp" type="button" aria-expanded="false">
+          <span class="who"><span class="co">Gameskraft</span><span class="role">Senior Quality &amp; Program Analyst, Strategy &amp; Ops</span><span class="mono when m">Apr 2022 – Sep 2025</span></span>
+          <span class="mono when">Apr 2022 – Sep 2025</span><span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="more"><div class="more-in"><div class="more-pad"><ul>
+          <li>Partnered with Product, Engineering and UX to validate feature launches through UAT and refine CRM workflows.</li>
+          <li>Built the Agent AI quality and evaluation framework, from rubric to drift monitoring.</li>
+          <li>Ran RCA that informed fixes cutting repeated contacts by 22%, and lifted self-service adoption by 13%.</li>
+          <li>Aligned quality benchmarks with conversion and renewal goals alongside growth stakeholders.</li>
+        </ul></div></div></div>
+      </article>
+      <article class="card item row">
+        <button class="exp" type="button" aria-expanded="false">
+          <span class="who"><span class="co">Byju's</span><span class="role">Senior Process Trainer · Quality Analyst and Trainer</span><span class="mono when m">Feb 2019 – Mar 2022</span></span>
+          <span class="mono when">Feb 2019 – Mar 2022</span><span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="more"><div class="more-in"><div class="more-pad"><ul>
+          <li>Designed onboarding and product-training curricula that turned new feature logic into field-ready documentation.</li>
+          <li>Trained sales and counseling teams on pitch structure, objection handling and conversion technique.</li>
+          <li>Ran end-to-end QA audits and review cycles that cut repeat errors and improved compliance.</li>
+          <li>Built evaluation rubrics and scorecards that other teams reused as calibration standards.</li>
+        </ul></div></div></div>
+      </article>
+      <article class="card item row">
+        <button class="exp" type="button" aria-expanded="false">
+          <span class="who"><span class="co">Simpl</span><span class="role">Senior Associate · Associate, Customer Strategy &amp; Operations</span><span class="mono when m">Jul 2016 – Feb 2019</span></span>
+          <span class="mono when">Jul 2016 – Feb 2019</span><span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="more"><div class="more-in"><div class="more-pad"><ul>
+          <li>Owned quality governance and training design, including upsell and cross-sell coaching.</li>
+          <li>Implemented QA dashboards and audit cycles that leadership used for decisions.</li>
+          <li>Handled sales and service for customer accounts while designing audit frameworks and scoring.</li>
+        </ul></div></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="bhead"><h2>Skills</h2></div>
+    <div class="chips">
+      <span class="chip">Product requirements</span><span class="chip">AI response evaluation</span><span class="chip">RCA to roadmap</span><span class="chip">KPI and OKR tracking</span><span class="chip">JIRA</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Figma</span><span class="chip">Supabase</span>
+    </div>
+    <article class="card item click-only skillbox">
+      <button class="exp" type="button" aria-expanded="false"><span>Show all skills, tools and certifications</span><span class="plus" aria-hidden="true"></span></button>
+      <div class="more"><div class="more-in"><div class="more-pad">
+        <div class="groups">
+          <div><span class="mono">More strengths</span><div class="chips"><span class="chip">Acceptance criteria</span><span class="chip">Cross-functional delivery</span><span class="chip">AI quality and governance</span><span class="chip">Program governance</span><span class="chip">Stakeholder communication</span><span class="chip">Six Sigma</span></div></div>
+          <div><span class="mono">More tools</span><div class="chips"><span class="chip">Capacitor</span><span class="chip">GSuite</span><span class="chip">Freshdesk</span><span class="chip">Haptik</span><span class="chip">Ameyo</span><span class="chip">Exotel</span><span class="chip">TransMon</span><span class="chip">RPA workflows</span></div></div>
+          <div><span class="mono">Certifications</span><div class="chips"><span class="chip">Product Management, Udemy</span><span class="chip">Power BI Masterclass</span><span class="chip">Figma UI/UX, Udemy</span><span class="chip">Data Science Bootcamp, Udemy</span></div></div>
+          <div><span class="mono">Education and languages</span><div class="chips"><span class="chip">BCA, Amity University</span><span class="chip">English</span><span class="chip">Hindi</span><span class="chip">Kannada</span><span class="chip">Telugu</span><span class="chip">Tamil</span></div></div>
+        </div>
+      </div></div></div>
+    </article>
+  </section>
+
+  <section class="block" id="project">
+    <div class="bhead"><h2>Projects</h2><span class="mono hint">Hover or tap a card for details</span></div>
+    <div class="cards">
+      <article class="card item proj">
+        <button class="exp" type="button" aria-expanded="false">
+          <div><span class="mono tag">Gameskraft · 2024–25</span><h3>Agent AI quality framework</h3><p class="teaser">Rubric, calibration and drift monitoring for AI responses.</p></div><span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="more"><div class="more-in"><div class="more-pad">
+          <p>Acted as the de facto product owner for the initiative, from Jul 2024 to Sep 2025.</p>
+          <ul><li>Defined acceptance criteria and ran evaluation cycles.</li><li>Drove roadmap decisions with Engineering and Product leadership.</li><li>Built the rubric design, scoring calibration and drift monitoring from the ground up.</li></ul>
+        </div></div></div>
+      </article>
+      <article class="card item proj">
+        <button class="exp" type="button" aria-expanded="false">
+          <div><span class="mono tag">Gameskraft</span><h3>Data-leakage incident</h3><p class="teaser">A risk signal turned into a shipped fix.</p></div><span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="more"><div class="more-in"><div class="more-pad">
+          <p>Led the root cause analysis on a data-leakage incident and drove the CRM safeguard changes that followed.</p>
+          <ul><li>Traced the incident to its source with RCA.</li><li>Pushed safeguard changes into the CRM.</li></ul>
+        </div></div></div>
+      </article>
+      <article class="card item proj">
+        <button class="exp" type="button" aria-expanded="false">
+          <div><span class="mono tag">Independent · Stealth project</span><h3>Two-sided marketplace</h3><p class="teaser">Founder and product builder, Figma to Supabase.</p></div><span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="more"><div class="more-in"><div class="more-pad">
+          <p>Owning scope from wireframes through active development on a cloud-native stack.</p>
+          <ul><li>Led a full visual and UX redesign covering the design system, navigation and iconography.</li><li>Applied Figma UI/UX training to a live product.</li><li>Building cross-platform mobile apps with Capacitor.</li></ul>
+        </div></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="cbox">
+      <p class="mono green">Contact</p>
+      <h2>Let's talk.</h2>
+      <p class="lede">Open to APM, AI quality and program roles in Bengaluru or remote.</p>
+      <div class="mail">
+        <span class="val" id="mail">roshnishivanna@gmail.com</span>
+        <button class="btn ghost sm copy" type="button" data-target="mail" data-label="Copy email">Copy email</button>
+      </div>
+      <div class="mail">
+        <span class="val" id="tel">+91 9591241285</span>
+        <button class="btn ghost sm copy" type="button" data-target="tel" data-label="Copy number">Copy number</button>
+      </div>
+      <div class="mail">
+        <a class="btn solid sm" href="https://www.linkedin.com/in/roshini-shivanna-aa1814236/" target="_blank" rel="noopener">LinkedIn profile</a>
+        <span class="val muted">linkedin.com/in/roshini-shivanna-aa1814236</span>
+      </div>
+    </div>
+  </section>
+
+  <footer><span class="mono">Roshini S · Bengaluru, India</span></footer>
+</div>
+
+<script>
+(function () {
+  // expand and collapse (click or tap); hover opening is handled in CSS on mouse devices
+  var exps = document.querySelectorAll('.item .exp');
+  Array.prototype.forEach.call(exps, function (b) {
+    b.addEventListener('click', function () {
+      var item = b.closest('.item');
+      var open = item.classList.toggle('open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  // mobile menu
+  var top = document.getElementById('top');
+  var burger = document.getElementById('burger');
+  burger.addEventListener('click', function () {
+    var open = top.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#menu a'), function (a) {
+    a.addEventListener('click', function () { top.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); });
+  });
+
+  // copy email and number
+  Array.prototype.forEach.call(document.querySelectorAll('button.copy'), function (copy) {
+    copy.addEventListener('click', function () {
+      var el = document.getElementById(copy.getAttribute('data-target'));
+      function sel() {
+        var rg = document.createRange(); rg.selectNodeContents(el);
+        var sl = window.getSelection(); sl.removeAllRanges(); sl.addRange(rg);
+        copy.textContent = 'Selected';
+      }
+      try {
+        navigator.clipboard.writeText(el.textContent).then(function () { copy.textContent = 'Copied'; }, sel);
+      } catch (err) { sel(); }
+      setTimeout(function () { copy.textContent = copy.getAttribute('data-label'); }, 1800);
+    });
+  });
+})();
+</script>
+
+</body></html>
